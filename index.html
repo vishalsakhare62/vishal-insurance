@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vishal Sakhare | Insurance Advisor</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f8fc;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 8%;
+background:linear-gradient(90deg,#003366,#0059b3);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#FFD700;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#FFD700;
+}
+
+.partners{
+margin-top:90px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+padding:15px;
+background:#fff;
+flex-wrap:wrap;
+}
+
+.partners img{
+height:40px;
+width:auto;
+object-fit:contain;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:60px 8%;
+background:linear-gradient(135deg,#003366,#0059b3);
+color:white;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.hero-text h1{
+font-size:58px;
+margin-bottom:15px;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#FFD700;
+color:#003366;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+margin-right:15px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#fff;
+transform:translateY(-3px);
+}
+
+.hero-image img{
+width:360px;
+border-radius:20px;
+border:5px solid #FFD700;
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#003366;
+margin-bottom:50px;
+}
+
+section{
+padding:80px 8%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+font-size:45px;
+color:#0059b3;
+margin-bottom:20px;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#003366;
+}
+
+.card ul{
+padding-left:20px;
+line-height:2;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.info{
+margin-top:25px;
+line-height:2;
+font-weight:bold;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+margin-top:40px;
+width:260px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+}
+
+}
+/* Floating WhatsApp */
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:999;
+transition:.3s;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+}
+
+
+/* Scroll To Top */
+
+.top-btn{
+
+position:fixed;
+
+bottom:95px;
+
+right:20px;
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:#003366;
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+font-size:22px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+.top-btn:hover{
+
+background:#FFD700;
+
+color:#003366;
+
+}
+
+
+.hero-text{
+
+animation:slideLeft 1s ease;
+
+}
+
+.hero-image{
+
+animation:slideRight 1s ease;
+
+}
+
+
+@keyframes slideLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes slideRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+.card{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+VS Insurance
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#services">Services</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="partners">
+
+<img src="indiapost.png">
+
+<img src="carehealth.png">
+
+<img src="sbilife.png">
+
+</div>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h3>Welcome</h3>
+
+<h1>Vishal Sakhare</h1>
+
+<p>
+
+✔ Postal Life Insurance Advisor
+
+<br><br>
+
+✔ Care Health Insurance Advisor
+
+<br><br>
+
+✔ SBI Life Insurance Advisor
+
+</p>
+
+<a href="tel:8668344657" class="btn">Call Now</a>
+
+<a href="https://wa.me/918668344657" class="btn">WhatsApp</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="vishal.jpeg" alt="Vishal Sakhare">
+
+</div>
+
+</section><!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="about">
+
+<div>
+
+<img src="vishal.jpeg" alt="Vishal Sakhare">
+
+</div>
+
+<div>
+
+<h2>Professional Insurance Advisor</h2>
+
+<p>
+
+Hello! I'm <b>Vishal Sakhare</b> from Karad, Maharashtra.
+
+I help individuals and families choose the right insurance solutions through
+
+<b>Postal Life Insurance (PLI)</b>,
+
+<b>Care Health Insurance</b>
+
+and
+
+<b>SBI Life Insurance</b>.
+
+My aim is to provide trusted advice, quick policy assistance and long-term customer support.
+
+</p>
+
+<div class="info">
+
+<p>📮 <b>PLI Advisor Code :</b> DA01251844</p>
+
+<p>❤️ <b>Care Health Advisor Code :</b> 21016888</p>
+
+<p>🛡 <b>SBI Life Mitra Code :</b> SLI992393278</p>
+
+<p>📞 <b>Mobile :</b> 8668344657</p>
+
+<p>📧 <b>Email :</b> Vishalsakhare62@gmail.com</p>
+
+<p>📍 <b>Location :</b> Karad, Maharashtra</p>
+
+<p>
+🌐 <b>SBI Life Website :</b><br>
+<a href="https://sakharevishalsunil992393278.lifemitra.com" target="_blank">
+Visit My SBI Life Mitra Page
+</a>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<h2 class="title">Our Insurance Services</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<h3>Postal Life Insurance</h3>
+
+<ul>
+
+<li>Santosh</li>
+
+<li>Suraksha</li>
+
+<li>Suvidha</li>
+
+<li>Sumangal</li>
+
+<li>Yugal Suraksha</li>
+
+<li>Children Policy</li>
+
+<li>Whole Life Assurance</li>
+
+<li>Convertible Whole Life</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Care Health Insurance</h3>
+
+<ul>
+
+<li>Care Supreme</li>
+
+<li>Care Advantage</li>
+
+<li>Family Floater</li>
+
+<li>Senior Citizen Plans</li>
+
+<li>Critical Illness</li>
+
+<li>Personal Accident</li>
+
+<li>Cashless Hospital Network</li>
+
+<li>Annual Health Check-up</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>SBI Life Insurance</h3>
+
+<ul>
+
+<li>Smart Lifetime Saver</li>
+
+<li>eShield Next</li>
+
+<li>Smart Platina Plus</li>
+
+<li>Guaranteed Return Plans</li>
+
+<li>Savings Plans</li>
+
+<li>Child Plans</li>
+
+<li>Retirement Plans</li>
+
+<li>ULIP Plans</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CHOOSE ME ================= -->
+
+<section>
+
+<h2 class="title">Why Choose Me?</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h3>Trusted Advisor</h3>
+
+<p>
+Professional advice based on your family's needs and financial goals.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+<h3>Easy Documentation</h3>
+
+<p>
+Fast documentation support and smooth policy processing.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-handshake-angle"></i>
+
+<h3>Lifetime Support</h3>
+
+<p>
+Renewal, servicing and claim guidance whenever you need it.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>Quick Response</h3>
+
+<p>
+Available on Phone and WhatsApp for fast customer support.
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ================= TESTIMONIALS ================= -->
+
+<section id="testimonials">
+
+<h2 class="title">What Our Customers Say</h2>
+
+<div class="cards">
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+Excellent service and quick guidance for my Postal Life Insurance policy.
+</p>
+
+<h4>- Happy Customer</h4>
+
+</div>
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+Very supportive during Care Health Insurance policy purchase and claim guidance.
+</p>
+
+<h4>- Satisfied Client</h4>
+
+</div>
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+Professional advice for SBI Life plans. Highly recommended.
+</p>
+
+<h4>- Trusted Customer</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+<h2 class="title">Frequently Asked Questions</h2>
+
+<div class="card">
+
+<h3>❓ Which insurance companies do you represent?</h3>
+
+<p>Postal Life Insurance, Care Health Insurance and SBI Life Insurance.</p>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>❓ Do you help with claim support?</h3>
+
+<p>Yes. I provide policy servicing and claim assistance.</p>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>❓ Can I contact you on WhatsApp?</h3>
+
+<p>Yes. You can contact me anytime on WhatsApp.</p>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📞 Contact Information</h3>
+
+<p><b>Name :</b> Vishal Sakhare</p>
+
+<p><b>Mobile :</b> 8668344657</p>
+
+<p><b>Email :</b> Vishalsakhare62@gmail.com</p>
+
+<p><b>Location :</b> Karad, Maharashtra</p>
+
+<p><b>PLI Code :</b> DA01251844</p>
+
+<p><b>Care Health :</b> 21016888</p>
+
+<p><b>SBI Life :</b> SLI992393278</p>
+
+<br>
+
+<a href="tel:8668344657" class="btn">📞 Call Now</a>
+
+<br><br>
+
+<a href="https://wa.me/918668344657" class="btn">💬 WhatsApp</a>
+
+</div>
+
+<div class="card">
+
+<h3>Request Free Consultation</h3>
+
+<form onsubmit="sendMessage();return false;">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+<br><br>
+
+<input
+type="tel"
+id="mobile"
+placeholder="Mobile Number"
+required>
+
+<br><br>
+
+<select id="plan">
+
+<option>Postal Life Insurance</option>
+
+<option>Care Health Insurance</option>
+
+<option>SBI Life Insurance</option>
+
+</select>
+
+<br><br>
+
+<button class="btn">Submit</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MAP ================= -->
+
+<section>
+
+<h2 class="title">Our Location</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Karad,Maharashtra&output=embed"
+width="100%"
+height="350"
+style="border:0;border-radius:15px;">
+</iframe>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="background:#003366;color:white;padding:40px;text-align:center;">
+
+<h2>Vishal Sakhare</h2>
+
+<p>
+
+Postal Life Insurance Advisor |
+
+Care Health Advisor |
+
+SBI Life Advisor
+
+</p>
+
+<br>
+
+<p>📞 8668344657</p>
+
+<p>📧 Vishalsakhare62@gmail.com</p>
+
+<p>
+
+© 2026 All Rights Reserved.
+
+</p>
+
+</footer>
+
+<script>
+
+function sendMessage(){
+
+let name=document.getElementById("name").value;
+
+let mobile=document.getElementById("mobile").value;
+
+let plan=document.getElementById("plan").value;
+
+let msg="Hello Vishal,%0A%0AName : "+name+
+"%0AMobile : "+mobile+
+"%0AInterested In : "+plan;
+
+window.open("https://wa.me/918668344657?text="+msg);
+
+}
+
+</script>
+<a href="https://wa.me/918668344657" class="whatsapp-float">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<a href="#" class="top-btn">
+
+↑
+
+</a>
+</body>
+
+</html>
