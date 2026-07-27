@@ -412,6 +412,9 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
   "description":"Postal Life Insurance (PLI), Care Health Insurance and SBI Life Insurance Advisor in Karad."
 }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 
 <body>
@@ -831,7 +834,7 @@ Professional advice for SBI Life plans. Highly recommended.
 
 <input type="email" id="email" placeholder="Email (Optional)"><br><br>
 <label for="dob"><b>Date of Birth (DD/MM/YYYY)</b></label><br>
-<input type="date" id="dob"><br><br>
+<input type="text" id="dob" placeholder="DD/MM/YYYY">
 
 <select id="company">
     <option>Postal Life Insurance (PLI)</option>
@@ -934,7 +937,10 @@ var text=
 window.open("https://wa.me/918668344657?text="+text);
 
 }
-
+flatpickr("#dob", {
+    dateFormat: "d/m/Y",
+    allowInput: true
+});
 </script>
 <a href="https://wa.me/918668344657" class="whatsapp-float">
 
