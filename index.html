@@ -11,9 +11,36 @@
 
 <meta name="author" content="Vishal Sakhare">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f5f7, #ffffff, #e8e8ed);
+    color: #1d1d1f;
+    min-height: 100vh;
+}
+nav a,
+.navbar a,
+header a {
+    color: #C9A227 !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* Apple style glass cards */
+.container, .card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
 *{
 margin:0;
 padding:0;
@@ -23,28 +50,36 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f8fc;
-color:#222;
+    background:linear-gradient(135deg,#eef5ff,#dcecff,#f7fbff);
+    color:#222;
+    overflow-x:hidden;
 }
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:15px 8%;
-background:linear-gradient(90deg,#003366,#0059b3);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-box-shadow:0 5px 20px rgba(0,0,0,.2);
-}
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:15px 8%;
 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.15);
+
+    z-index:1000;
+}
 .logo{
 font-size:28px;
 font-weight:bold;
-color:#FFD700;
+color: #C9A227;
 }
 
 nav a{
@@ -77,14 +112,25 @@ object-fit:contain;
 }
 
 .hero{
-min-height:90vh;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:60px 8%;
-background:linear-gradient(135deg,#003366,#0059b3);
-color:white;
-flex-wrap:wrap;
+    min-height:90vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 8%;
+    flex-wrap:wrap;
+
+    background:linear-gradient(
+     
+        135deg,
+        rgba(0,51,102,0.95),
+        rgba(0,89,179,0.85)
+    );
+
+box-shadow: inset 0 0 120px rgba(0,140,255,0.20);
+
+    color:white;
+    position:relative;
+    overflow:hidden;
 }
 
 .hero-text{
@@ -128,7 +174,9 @@ transform:translateY(-3px);
 width:360px;
 border-radius:20px;
 border:5px solid #FFD700;
-box-shadow:0 10px 35px rgba(0,0,0,.35);
+box-shadow:
+0 25px 50px rgba(0,0,0,.35),
+0 0 35px rgba(0,140,255,.35);
 }
 
 .title{
@@ -149,15 +197,36 @@ gap:25px;
 }
 
 .card{
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-transition:.4s;
+    background:rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.30);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 32px rgba(31,38,135,.18);
+
+    transition:0.4s;
+    transform-style:preserve-3d;
+cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-10px);
+
+   transform:
+translateY(-15px)
+rotateX(5deg)
+rotateY(-5deg)
+scale(1.04);
+
+    background:rgba(255,255,255,0.28);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
 }
 
 .card i{
@@ -365,6 +434,28 @@ transform:translateY(0);
 }
 
 }
+.glass-circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+}
+
+.circle1{
+    width:140px;
+    height:140px;
+    top:-40px;
+    right:-40px;
+    opacity:0.25;
+}
+
+.circle2{
+    width:120px;
+    height:120px;
+    bottom:-40px;
+    left:-40px;
+    opacity:0.20;
+}
+
 .enquiry-form input,
 .enquiry-form select,
 .enquiry-form textarea{
@@ -378,9 +469,7 @@ font-size:16px;
 
 }
 
-.enquiry-form input:focus,
-.enquiry-form select,
-.enquiry-form textarea:focus{
+
 
 outline:none;
 border-color:#0059b3;
@@ -389,7 +478,7 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
 }
 
 </style>
-</style>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -419,6 +508,7 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
 
 <body>
 
+</body>
 <header>
 
 <div class="logo">
@@ -482,7 +572,8 @@ VS Insurance
 <img src="vishal.jpeg" alt="Vishal Sakhare">
 
 </div>
-
+<div class="glass-circle circle1"></div>
+<div class="glass-circle circle2"></div>
 </section><!-- ================= ABOUT ================= -->
 
 <section id="about">
