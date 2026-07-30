@@ -18,13 +18,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
+.sub-title{
+    color:#003366;
+    font-size:24px;
+    margin:20px 0 15px;
+    border-left:5px solid #FFD700;
+    padding-left:12px;
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     background: linear-gradient(135deg, #f5f5f7, #ffffff, #e8e8ed);
     color: #1d1d1f;
     min-height: 100vh;
+}
+#contact .card h3{
+    font-size:32px;
+    color:#003366;
+    margin-bottom:25px;
+}
+
+#contact .card p{
+    font-size:22px;
+    line-height:1.8;
+    color:#333;
+}
+
+#contact .card b{
+    color:#003366;
 }
 nav a,
 .navbar a,
@@ -95,20 +116,31 @@ color:#FFD700;
 }
 
 .partners{
-margin-top:90px;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:20px;
-padding:15px;
-background:#fff;
-flex-wrap:wrap;
+    margin-top:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    padding:20px;
+    background:#f8f9fc;
+    flex-wrap:wrap;
+    border-bottom:1px solid #e5e5e5;
 }
 
 .partners img{
-height:40px;
-width:auto;
-object-fit:contain;
+    height: 80px;
+    width:auto;
+    object-fit:contain;
+    padding:10px 18px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.10);
+    transition:all .3s ease;
+}
+
+.partners img:hover{
+    transform:translateY(-5px) scale(1.08);
+    box-shadow:0 12px 25px rgba(0,0,0,0.18);
 }
 
 .hero{
@@ -119,12 +151,12 @@ object-fit:contain;
     padding:60px 8%;
     flex-wrap:wrap;
 
-    background:linear-gradient(
-     
-        135deg,
-        rgba(0,51,102,0.95),
-        rgba(0,89,179,0.85)
-    );
+   background:linear-gradient(
+    135deg,
+    #00264d,
+    #004080,
+    #0059b3
+);
 
 box-shadow: inset 0 0 120px rgba(0,140,255,0.20);
 
@@ -141,10 +173,81 @@ max-width:600px;
 font-size:22px;
 margin-bottom:10px;
 }
+.welcome-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 24px;
+    margin-bottom:22px;
 
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:50px;
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    color:#FFD700;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:0.5px;
+
+    box-shadow:0 0 20px rgba(255,215,0,0.20);
+
+    animation:welcomeGlow 2s ease-in-out infinite alternate;
+}
+
+.welcome-badge i{
+    color:#FFD700;
+    font-size:18px;
+}
+
+@keyframes welcomeGlow{
+    from{
+        transform:translateY(0);
+        box-shadow:0 0 10px rgba(255,215,0,.20);
+    }
+
+    to{
+        transform:translateY(-3px);
+        box-shadow:0 0 25px rgba(255,215,0,.45);
+    }
+}
+@keyframes nameGlow{
+
+    0%{
+        filter:brightness(1);
+    }
+
+    50%{
+        filter:brightness(1.25);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+
+}
 .hero-text h1{
-font-size:58px;
-margin-bottom:15px;
+    font-size:62px;
+    font-weight:800;
+    line-height:1.1;
+    margin:15px 0;
+    background:linear-gradient(90deg,#FFD700,#FFF8DC,#FFD700);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 20px rgba(255,215,0,.4);
+    animation:nameGlow 3s infinite;
+}
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:0 0 25px rgba(255,215,0,.35);
+
+    letter-spacing:1px;
+
+    animation:nameGlow 3s ease-in-out infinite;
 }
 
 .hero-text p{
@@ -152,38 +255,101 @@ font-size:20px;
 line-height:1.8;
 margin-bottom:30px;
 }
-
-.btn{
-display:inline-block;
-padding:15px 30px;
-background:#FFD700;
-color:#003366;
-font-weight:bold;
-text-decoration:none;
-border-radius:40px;
-margin-right:15px;
-transition:.3s;
+.tagline{
+    margin:15px 0 25px;
+    font-size:22px;
+    font-weight:700;
+    color:#FFD700;
+    line-height:1.5;
 }
 
+.tagline span{
+    display:block;
+    margin-top:8px;
+    font-size:16px;
+    font-weight:500;
+    color:#ffffff;
+    opacity:0.9;
+}
+.verified-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin:15px 0;
+    padding:8px 18px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:30px;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+
+.verified-badge i{
+    color:#00e676;
+    font-size:18px;
+}
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#FFD700;
+    color:#003366;
+    font-weight:700;
+    text-decoration:none;
+    border-radius:50px;
+    transition:all .3s ease;
+}
+
+.btn:hover{
+    background:#ffffff;
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.btn i{
+    margin-right:8px;
+    transition:.3s;
+}
+
+.btn:hover i{
+    transform:rotate(-15deg) scale(1.2);
+}
 .btn:hover{
 background:#fff;
 transform:translateY(-3px);
 }
 
 .hero-image img{
-width:360px;
-border-radius:20px;
-border:5px solid #FFD700;
-box-shadow:
-0 25px 50px rgba(0,0,0,.35),
-0 0 35px rgba(0,140,255,.35);
+    width:360px;
+    border-radius:20px;
+    border:5px solid #FFD700;
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(0,140,255,.35);
+    transition:all .4s ease;
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+.hero-image img:hover{
+    transform:scale(1.03);
 }
 
 .title{
-text-align:center;
-font-size:40px;
-color:#003366;
-margin-bottom:50px;
+    text-align:center;
+    font-size:46px;
+    font-weight:800;
+    color:#003366;
+    margin-bottom:50px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.15);
+}
+
+.title i{
+    color:#FFD700;
+    margin-right:10px;
 }
 
 section{
@@ -248,7 +414,7 @@ line-height:2;
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:70px;
 align-items:center;
 }
 
@@ -363,7 +529,9 @@ animation:slideLeft 1s ease;
 
 .hero-image{
 
-animation:slideRight 1s ease;
+    position:relative;
+
+    animation:slideRight 1s ease;
 
 }
 
@@ -476,7 +644,110 @@ border-color:#0059b3;
 box-shadow:0 0 10px rgba(0,89,179,.2);
 
 }
+@keyframes floatImage{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+.hero .btn{
+    margin-top:25px;
+}
+.sbi-btn{
+    animation:floatBtn 2.5s ease-in-out infinite;
+}
 
+@keyframes floatBtn{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-6px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+.service-title{
+    display:block;
+    width:fit-content;
+    margin:0 auto 50px;
+    background:linear-gradient(135deg,#003366,#0059b3);
+    color:#FFD700;
+    padding:12px 35px;
+    border-radius:12px;
+    font-size:40px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+.section-title{
+    display:block;
+    width:fit-content;
+    margin:0 auto 50px;
+    background:linear-gradient(135deg,#003366,#0059b3);
+    color:#FFD700;
+    padding:12px 35px;
+    border-radius:12px;
+    font-size:38px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+#about .title{
+    display:inline-block;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#003366;
+    font-size:42px;
+    font-weight:800;
+    padding:12px 35px;
+    border-radius:50px;
+    border:2px solid #FFD700;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+#about{
+    text-align:center;
+}
+
+#about .about{
+    text-align:left;
+}
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 0.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.calculator-box{
+    max-width:500px;
+    margin:auto;
+    text-align:center;
+}
+
+.calculator-box input{
+    width:100%;
+    padding:15px;
+    margin:10px 0 20px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:16px;
+}
+
+.calculator-box label{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    color:#003366;
+}
 </style>
 
 <script type="application/ld+json">
@@ -499,6 +770,21 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     "https://sakharevishalsunil992393278.lifemitra.com"
   ],
   "description":"Postal Life Insurance (PLI), Care Health Insurance and SBI Life Insurance Advisor in Karad."
+}
+function calculatePremium(){
+
+let age=document.getElementById("age").value;
+let amount=document.getElementById("amount").value;
+
+if(age=="" || amount==""){
+alert("Please fill all details");
+return;
+}
+
+let premium=(amount/100000)*1200;
+
+document.getElementById("result").innerHTML=
+"Estimated Annual Premium: ₹"+premium;
 }
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -543,9 +829,21 @@ VS Insurance
 
 <div class="hero-text">
 
-<h3>Welcome</h3>
+<div class="welcome-badge">
+    <i class="fa-solid fa-shield-heart"></i>
+    Your Trusted Insurance Partner
+</div>
 
 <h1>Vishal Sakhare</h1>
+<div class="verified-badge">
+    <i class="fa-solid fa-circle-check"></i>
+    Verified Insurance Advisor
+</div>
+<p class="tagline">
+    Trusted Insurance Advisor
+    <br>
+    <span>B.Tech (Electrical) | B.Com | Diploma in Electrical Engineering</span>
+</p>
 
 <p>
 
@@ -576,9 +874,11 @@ VS Insurance
 <div class="glass-circle circle2"></div>
 </section><!-- ================= ABOUT ================= -->
 
-<section id="about">
+<section id="about" class="hidden">
 
-<h2 class="title">About Me</h2>
+<h2 class="title" style="background:linear-gradient(90deg,#003366,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+    <i class="fa-solid fa-user-tie"></i> About Me
+</h2>
 
 <div class="about">
 
@@ -590,24 +890,20 @@ VS Insurance
 
 <div>
 
-<h2>Professional Insurance Advisor</h2>
+<h2 style="font-size:42px; color:#2235df; font-weight:900; letter-spacing:1px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.15);">
+    Professional Insurance Advisor
+</h2>
 
-<p>
-
+<p style="font-size:22px; line-height:2;">
 Hello! I'm <b>Vishal Sakhare</b> from Karad, Maharashtra.
 
 I help individuals and families choose the right insurance solutions through
-
 <b>Postal Life Insurance (PLI)</b>,
-
 <b>Care Health Insurance</b>
-
 and
-
-<b>SBI Life Insurance</b>.
+<b>SBI Life Insurance</b>.<br>
 
 My aim is to provide trusted advice, quick policy assistance and long-term customer support.
-
 </p>
 
 <div class="info">
@@ -623,11 +919,29 @@ My aim is to provide trusted advice, quick policy assistance and long-term custo
 <p>📧 <b>Email :</b> Vishalsakhare62@gmail.com</p>
 
 <p>📍 <b>Location :</b> Karad, Maharashtra</p>
+<p>🎓 <b>Education :</b></p>
 
+<ul style="margin-left:25px; line-height:2;">
+    <li>Diploma in Electrical Engineering</li>
+    <li>Bachelor of Commerce (B.Com)</li>
+    <li>Bachelor of Technology (B.Tech) - Electrical Engineering</li>
+</ul>
 <p>
-🌐 <b>SBI Life Website :</b><br>
-<a href="https://sakharevishalsunil992393278.lifemitra.com" target="_blank">
-Visit My SBI Life Mitra Page
+🌐 <b>SBI Life Website :</b><br><br>
+
+<a href="https://sakharevishalsunil992393278.lifemitra.com"
+   target="_blank"
+   class="sbi-btn"
+   style="display:inline-block;
+          background:linear-gradient(135deg,#003366,#0059b3);
+          color:#FFD700;
+          padding:14px 28px;
+          border-radius:50px;
+          text-decoration:none;
+          font-size:18px;
+          font-weight:700;
+          box-shadow:0 10px 25px rgba(0,0,0,0.25);">
+    🌐 Visit My SBI Life Mitra Page
 </a>
 </p>
 
@@ -641,9 +955,9 @@ Visit My SBI Life Mitra Page
 
 <!-- ================= SERVICES ================= -->
 
-<section id="services">
+<section id="services" class="hidden">
 
-<h2 class="title">Our Insurance Services</h2>
+<h2 class="service-title">Our Insurance Services</h2>
 
 <div class="cards">
 
@@ -734,12 +1048,32 @@ Visit My SBI Life Mitra Page
 </div>
 
 </section>
+<section id="calculator">
 
+<h2 class="section-title">Insurance Premium Calculator</h2>
+
+<div class="card calculator-box">
+
+<label>Age</label>
+<input type="number" id="age" placeholder="Enter your age">
+
+<label>Sum Assured (₹)</label>
+<input type="number" id="amount" placeholder="Enter required cover">
+
+<button class="btn" onclick="calculatePremium()">
+Calculate Premium
+</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+</section>
 <!-- ================= WHY CHOOSE ME ================= -->
 
-<section>
+<section id="why-choose" class="hidden">
 
-<h2 class="title">Why Choose Me?</h2>
+<h2 class="section-title">Why Choose Me ?</h2>
 
 <div class="cards">
 
@@ -747,10 +1081,10 @@ Visit My SBI Life Mitra Page
 
 <i class="fa-solid fa-user-check"></i>
 
-<h3>Trusted Advisor</h3>
+<h3>Trusted Insurance Advisor</h3>
 
 <p>
-Professional advice based on your family's needs and financial goals.
+Get honest advice and the right insurance solution based on your family's needs and financial goals.
 </p>
 
 </div>
@@ -759,10 +1093,10 @@ Professional advice based on your family's needs and financial goals.
 
 <i class="fa-solid fa-file-circle-check"></i>
 
-<h3>Easy Documentation</h3>
+<h3>Quick & Hassle-Free Process</h3>
 
 <p>
-Fast documentation support and smooth policy processing.
+Simple documentation, quick policy issuance and complete assistance at every step.
 </p>
 
 </div>
@@ -771,10 +1105,10 @@ Fast documentation support and smooth policy processing.
 
 <i class="fa-solid fa-handshake-angle"></i>
 
-<h3>Lifetime Support</h3>
+<h3>Lifetime Customer Support</h3>
 
 <p>
-Renewal, servicing and claim guidance whenever you need it.
+Support for renewals, policy servicing and claim assistance even after policy purchase.
 </p>
 
 </div>
@@ -783,10 +1117,10 @@ Renewal, servicing and claim guidance whenever you need it.
 
 <i class="fa-solid fa-headset"></i>
 
-<h3>Quick Response</h3>
+<h3>Fast Response</h3>
 
 <p>
-Available on Phone and WhatsApp for fast customer support.
+Reach me anytime through Call or WhatsApp for quick guidance and support.
 </p>
 
 </div>
@@ -795,9 +1129,9 @@ Available on Phone and WhatsApp for fast customer support.
 
 </section><!-- ================= TESTIMONIALS ================= -->
 
-<section id="testimonials">
+<section id="testimonials" class="hidden">
 
-<h2 class="title">What Our Customers Say</h2>
+<h2 class="section-title">What Our Customers Say</h2>
 
 <div class="cards">
 
@@ -843,9 +1177,9 @@ Professional advice for SBI Life plans. Highly recommended.
 
 <!-- ================= FAQ ================= -->
 
-<section id="faq">
+<section id="faq" class="hidden">
 
-<h2 class="title">Frequently Asked Questions</h2>
+<h2 class="section-title">Frequently Asked Questions</h2>
 
 <div class="card">
 
@@ -877,39 +1211,49 @@ Professional advice for SBI Life plans. Highly recommended.
 
 </section>
 
-<!-- ================= CONTACT ================= -->
+<section id="contact" class="hidden">
 
-<section id="contact">
-
-<h2 class="title">Contact Me</h2>
+<h2 class="section-title">Contact Me</h2>
 
 <div class="cards">
 
 <div class="card">
 
-<h3>📞 Contact Information</h3>
+<h3 class="contact-title">
+    <i class="fa-solid fa-address-card"></i>
+    Contact Information
+</h3>
 
-<p><b>Name :</b> Vishal Sakhare</p>
+<p><i class="fa-solid fa-user"></i> <b>Name :</b> Vishal Sakhare</p>
 
-<p><b>Mobile :</b> 8668344657</p>
+<p><i class="fa-solid fa-phone"></i> <b>Mobile :</b> 8668344657</p>
 
-<p><b>Email :</b> Vishalsakhare62@gmail.com</p>
+<p><i class="fa-solid fa-envelope"></i> <b>Email :</b> Vishalsakhare62@gmail.com</p>
 
-<p><b>Location :</b> Karad, Maharashtra</p>
+<p><i class="fa-solid fa-location-dot"></i> <b>Location :</b> Karad, Maharashtra</p>
 
-<p><b>PLI Code :</b> DA01251844</p>
+<p><i class="fa-solid fa-building-columns"></i> <b>PLI Code :</b> DA01251844</p>
 
-<p><b>Care Health :</b> 21016888</p>
+<p><i class="fa-solid fa-heart-pulse"></i> <b>Care Health Code :</b> 21016888</p>
 
-<p><b>SBI Life :</b> SLI992393278</p>
+<p><i class="fa-solid fa-shield-heart"></i> <b>SBI Life Code :</b> SLI992393278</p>
+<br>
+<h2>Need Expert Insurance Advice?</h2>
 
+<p>
+Get FREE Consultation for Postal Life Insurance, Care Health Insurance and SBI Life Insurance.
+</p>
 <br>
 
-<a href="tel:8668344657" class="btn">📞 Call Now</a>
+<a href="tel:8668344657" class="btn">
+<i class="fa-solid fa-phone"></i> Call Now
+</a>
 
-<br><br>
+<a href="https://wa.me/918668344657" class="btn whatsapp-btn" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
+</a>
 
-<a href="https://wa.me/918668344657" class="btn">💬 WhatsApp</a>
+
 
 </div>
 
@@ -958,9 +1302,9 @@ placeholder="Write your enquiry..."></textarea><br><br>
 
 <!-- ================= MAP ================= -->
 
-<section>
+<section id="location" class="hidden">
 
-<h2 class="title">Our Location</h2>
+<h2 class="section-title">Our Location</h2>
 
 <iframe
 src="https://www.google.com/maps?q=Karad,Maharashtra&output=embed"
@@ -1046,6 +1390,19 @@ disableMobile: true
 ↑
 
 </a>
+<script>
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach((el)=>{
+    observer.observe(el);
+});
+</script>
 </body>
 
 </html>
