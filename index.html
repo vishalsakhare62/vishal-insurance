@@ -749,10 +749,34 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     color:#003366;
 }
 .contact-info p{
+     display:flex;
+    align-items:flex-start;
+    gap:10px;
+    flex-wrap:wrap;
+    word-break:break-word;
+    line-height:1.6;
     font-size:13px;
     margin:6px 0;
 }
+@media (max-width:768px){
 
+.about{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.about img{
+width:100%;
+max-width:350px;
+margin:auto;
+display:block;
+}
+
+.contact-buttons a{
+width:100%;
+}
+
+}
 </style>
 
 <script type="application/ld+json">
