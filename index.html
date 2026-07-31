@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>.
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -355,24 +355,13 @@ transform:translateY(-3px);
 section{
 padding:80px 8%;
 }
-#contact .cards{
-display:block !important;
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-#contact .card{
-width:100%;
-margin-bottom:25px;
-}
-.cards{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-#contact .cards{
-display:flex !important;
-flex-direction:column !important;
-gap:25px;
-}
 .card{
     background:rgba(255,255,255,0.18);
 
@@ -391,14 +380,7 @@ gap:25px;
     transform-style:preserve-3d;
 cursor:pointer;
 }
-.contact-box{
-display:block !important;
-}
 
-.contact-box .card{
-width:100% !important;
-margin-bottom:25px;
-}
 .card:hover{
 
    transform:
@@ -767,31 +749,21 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     color:#003366;
 }
 .contact-info p{
-     display:flex;
-    align-items:flex-start;
-    gap:10px;
-    flex-wrap:wrap;
-    word-break:break-word;
-    line-height:1.6;
     font-size:13px;
     margin:6px 0;
 }
 @media (max-width:768px){
 
 .about{
-grid-template-columns:1fr;
-gap:30px;
+    grid-template-columns:1fr;
+    text-align:center;
 }
 
 .about img{
-width:100%;
-max-width:350px;
-margin:auto;
-display:block;
-}
-
-.contact-buttons a{
-width:100%;
+    width:80%;
+    max-width:320px;
+    margin:0 auto;
+    display:block;
 }
 
 }
@@ -1255,30 +1227,12 @@ Professional advice for SBI Life plans. Highly recommended.
 
 </div>
 
-<br>
-
-<h2>Need Expert Insurance Advice?</h2>
-
-<p>
-Get FREE Consultation for Postal Life Insurance, Care Health Insurance and SBI Life Insurance.
-</p>
-<br>
-
-<a href="tel:8668344657" class="btn">
-<i class="fa-solid fa-phone"></i> Call Now
-</a>
-
-<a href="https://wa.me/918668344657" class="btn whatsapp-btn" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> WhatsApp
-</a>
+<br><br><br>
 
 
-
-</div>
+<h2 class="section-title">Online Policy Enquiry</h2>
 
 <div class="card">
-
-<h2 class="title">Online Policy Enquiry</h2>
 
 <form onsubmit="sendEnquiry(); return false;" class="enquiry-form">
 
@@ -1397,22 +1351,8 @@ flatpickr("#dob", {
 });
 disableMobile: true
 </script>
-function calculatePremium(){
 
-let age = document.getElementById("age").value;
-let amount = document.getElementById("amount").value;
 
-if(age=="" || amount==""){
-alert("Please fill all details");
-return;
-}
-
-let premium = (amount / 100000) * 1200;
-
-document.getElementById("result").innerHTML =
-"Estimated Annual Premium: ₹" + premium;
-
-}
 <a href="https://wa.me/918668344657" class="whatsapp-float">
 
 <i class="fab fa-whatsapp"></i>
@@ -1456,6 +1396,6 @@ document.getElementById("result").innerHTML =
 
 }
 </script>
-</body>
 
+</body>
 </html>
