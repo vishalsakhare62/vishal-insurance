@@ -101,8 +101,14 @@ header{
 font-size:28px;
 font-weight:bold;
 color: #C9A227;
+display: flex;
+align-items: center;
+gap: 10px;
 }
-
+.logo i{
+    font-size: 30px;
+    color: #FFD700;
+}
 nav a{
 color:#fff;
 text-decoration:none;
@@ -817,9 +823,8 @@ document.getElementById("result").innerHTML=
 <header>
 
 <div class="logo">
-VS Insurance
+    <i class="fa-solid fa-shield-halved"></i> VS INSURANCE
 </div>
-
 <nav>
 
 <a href="#">Home</a>
@@ -891,7 +896,9 @@ VS Insurance
 </div>
 <div class="glass-circle circle1"></div>
 <div class="glass-circle circle2"></div>
-</section><!-- ================= ABOUT ================= -->
+</section>
+ 
+<!-- ================= ABOUT ================= -->
 
 <section id="about" class="hidden">
 
