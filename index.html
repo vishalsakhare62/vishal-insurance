@@ -190,6 +190,7 @@ box-shadow: inset 0 0 120px rgba(0,140,255,0.20);
     color:white;
     position:relative;
     overflow:hidden;
+    z-index:1;
 }
 
 .hero-text{
@@ -426,11 +427,11 @@ cursor:pointer;
 
 .card:hover{
 
-   transform:
-translateY(-15px)
-rotateX(5deg)
-rotateY(-5deg)
-scale(1.04);
+  transform:
+translateY(-12px)
+rotateX(8deg)
+rotateY(-8deg)
+scale(1.05);
 
     background:rgba(255,255,255,0.28);
 
@@ -443,7 +444,14 @@ font-size:45px;
 color:#0059b3;
 margin-bottom:20px;
 }
-
+.card:hover i{
+    color:#FFD700;
+    transform:scale(1.2);
+    text-shadow:
+    0 0 10px #FFD700,
+    0 0 25px #FFD700;
+    transition:.4s ease;
+}
 .card h3{
 margin-bottom:15px;
 color:#003366;
@@ -830,14 +838,31 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
         #FFD700
     );
     z-index:-1;
-    animation:rotateBorder 4s linear infinite;
+   animation:rotateBorder 8s ease-in-out infinite;
     filter:blur(3px);
 }
 
 @keyframes rotateBorder{
+
+    0%{
+        transform:rotate(0deg);
+        opacity:1;
+    }
+
+    15%{
+        transform:rotate(360deg);
+        opacity:1;
+    }
+
+    16%{
+        opacity:0;
+    }
+
     100%{
         transform:rotate(360deg);
+        opacity:0;
     }
+
 }
 #loader{
     position:fixed;
@@ -995,6 +1020,74 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     }
 
 }
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:linear-gradient(90deg,#FFD700,#ffae00);
+    z-index:999999;
+    box-shadow:0 0 10px rgba(255,215,0,.8);
+    transition:width .1s linear;
+}
+.counter-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    padding:50px 8%;
+    text-align:center;
+}
+
+.counter-box{
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    border:1px solid rgba(255,255,255,.3);
+    transition:.3s;
+}
+
+.counter-box:hover{
+    transform:translateY(-10px);
+}
+
+.counter-box h2{
+    font-size:45px;
+    color:#003366;
+    font-weight:800;
+}
+
+.counter-box p{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:600;
+    color:#333;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-20%;
+    width:300px;
+    height:200%;
+    background:rgba(255,215,0,0.15);
+    transform:rotate(35deg);
+    animation:lightMove 6s linear infinite;
+    z-index:0;
+}
+
+@keyframes lightMove{
+    0%{
+        left:-30%;
+    }
+
+    100%{
+        left:120%;
+    }
+}
 </style>
 
 <script type="application/ld+json">
@@ -1046,6 +1139,7 @@ document.getElementById("result").innerHTML=
         <h1>VS INSURANCE</h1>
     </div>
 </div>
+<div id="progress-bar"></div>
 <script>
 window.addEventListener("load",function(){
 
@@ -1055,7 +1149,7 @@ window.addEventListener("load",function(){
 
 });
 </script>
-</body>
+
 <header>
 
 <div class="logo">
@@ -1341,7 +1435,29 @@ Calculate Premium
 
 </section>
 <!-- ================= WHY CHOOSE ME ================= -->
+<section class="counter-section">
 
+<div class="counter-box">
+<h2 class="counter" data-target="1200">0</h2>
+<p>Policies Guidance</p>
+</div>
+
+<div class="counter-box">
+<h2 class="counter" data-target="500">0</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="counter-box">
+<h2 class="counter" data-target="3">0</h2>
+<p>Insurance Partners</p>
+</div>
+
+<div class="counter-box">
+<h2 class="counter" data-target="24">0</h2>
+<p>Customer Support</p>
+</div>
+
+</section>
 <section id="why-choose" class="hidden">
 
 <h2 class="section-title">Why Choose Me ?</h2>
@@ -1648,6 +1764,51 @@ document.getElementById("result").innerHTML =
 
 }
 </script>
+<script>
+window.addEventListener("scroll", function () {
 
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress-bar").style.width = progress + "%";
+
+});
+</script>
+<script>
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+
+        const increment = target / 100;
+
+        if(current < target){
+
+            counter.innerText = Math.ceil(current + increment);
+
+            setTimeout(updateCounter,20);
+
+        }else{
+
+            counter.innerText = target + "+";
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+</script>
 </body>
 </html>
