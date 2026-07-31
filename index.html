@@ -110,11 +110,32 @@ gap: 10px;
     color: #FFD700;
 }
 nav a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-weight:bold;
-transition:.3s;
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#FFD700;
+    border-radius:5px;
+    transition:width .35s ease;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:#FFD700;
 }
 
 nav a:hover{
@@ -306,6 +327,8 @@ margin-bottom:30px;
     text-decoration:none;
     border-radius:50px;
     transition:all .3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover{
@@ -313,7 +336,21 @@ margin-bottom:30px;
     transform:translateY(-4px);
     box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:50%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+    transition:.8s;
+}
 
+.btn:hover::before{
+    left:150%;
+}
 .btn i{
     margin-right:8px;
     transition:.3s;
@@ -528,15 +565,17 @@ color:#003366;
 
 
 .hero-text{
-
+position:relative;
+z-index:2;
 animation:slideLeft 1s ease;
+
 
 }
 
 .hero-image{
 
     position:relative;
-
+    z-index:2;
     animation:slideRight 1s ease;
 
 }
@@ -773,6 +812,189 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
 }
 
 }
+.hero-image{
+    position: relative;
+    display: inline-block;
+}
+
+.hero-image::before{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:28px;
+    background:conic-gradient(
+        #FFD700,
+        #00BFFF,
+        #FFD700,
+        #00BFFF,
+        #FFD700
+    );
+    z-index:-1;
+    animation:rotateBorder 4s linear infinite;
+    filter:blur(3px);
+}
+
+@keyframes rotateBorder{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+#loader{
+    position:fixed;
+    inset:0;
+    background:#00264d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity .6s ease, visibility .6s ease;
+}
+
+.loader-logo{
+    text-align:center;
+    color:#FFD700;
+    animation:loaderZoom 1.2s ease-in-out infinite alternate;
+}
+
+.loader-logo i{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.loader-logo h1{
+    font-size:42px;
+    letter-spacing:4px;
+}
+
+@keyframes loaderZoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+.particles{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.particles span{
+    position:absolute;
+    display:block;
+    width:8px;
+    height:8px;
+    background:rgba(255,215,0,.45);
+    border-radius:50%;
+    animation:floatParticle 12s linear infinite;
+}
+
+/* Premium Floating Particles */
+
+.particles{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.particles span{
+    position:absolute;
+    bottom:-100px;
+    border-radius:50%;
+    animation:floatUp linear infinite;
+    filter:blur(1px);
+}
+
+.particles span:nth-child(1){
+    left:8%;
+    width:10px;
+    height:10px;
+    background:#FFD700;
+    animation-duration:10s;
+}
+
+.particles span:nth-child(2){
+    left:22%;
+    width:18px;
+    height:18px;
+    background:rgba(0,191,255,.45);
+    animation-duration:13s;
+}
+
+.particles span:nth-child(3){
+    left:36%;
+    width:12px;
+    height:12px;
+    background:#FFD700;
+    animation-duration:9s;
+}
+
+.particles span:nth-child(4){
+    left:50%;
+    width:22px;
+    height:22px;
+    background:rgba(255,255,255,.30);
+    animation-duration:15s;
+}
+
+.particles span:nth-child(5){
+    left:64%;
+    width:14px;
+    height:14px;
+    background:#FFD700;
+    animation-duration:11s;
+}
+
+.particles span:nth-child(6){
+    left:78%;
+    width:20px;
+    height:20px;
+    background:rgba(0,191,255,.40);
+    animation-duration:14s;
+}
+
+.particles span:nth-child(7){
+    left:90%;
+    width:11px;
+    height:11px;
+    background:#FFD700;
+    animation-duration:12s;
+}
+
+.particles span:nth-child(8){
+    left:96%;
+    width:16px;
+    height:16px;
+    background:rgba(255,255,255,.35);
+    animation-duration:16s;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+
+}
 </style>
 
 <script type="application/ld+json">
@@ -818,7 +1040,21 @@ document.getElementById("result").innerHTML=
 </head>
 
 <body>
+<div id="loader">
+    <div class="loader-logo">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h1>VS INSURANCE</h1>
+    </div>
+</div>
+<script>
+window.addEventListener("load",function(){
 
+    setTimeout(function(){
+        document.getElementById("loader").classList.add("hide");
+    },2000);
+
+});
+</script>
 </body>
 <header>
 
@@ -851,6 +1087,16 @@ document.getElementById("result").innerHTML=
 
 <section class="hero">
 
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 <div class="hero-text">
 
 <div class="welcome-badge">
