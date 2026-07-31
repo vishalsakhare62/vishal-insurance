@@ -355,13 +355,24 @@ transform:translateY(-3px);
 section{
 padding:80px 8%;
 }
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+#contact .cards{
+display:block !important;
 }
 
+#contact .card{
+width:100%;
+margin-bottom:25px;
+}
+.cards{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+#contact .cards{
+display:flex !important;
+flex-direction:column !important;
+gap:25px;
+}
 .card{
     background:rgba(255,255,255,0.18);
 
@@ -380,7 +391,14 @@ gap:25px;
     transform-style:preserve-3d;
 cursor:pointer;
 }
+.contact-box{
+display:block !important;
+}
 
+.contact-box .card{
+width:100% !important;
+margin-bottom:25px;
+}
 .card:hover{
 
    transform:
@@ -1237,38 +1255,6 @@ Professional advice for SBI Life plans. Highly recommended.
 
 </div>
 
-</section>
-
-<section id="contact" class="hidden">
-
-<h2 class="section-title">Contact Me</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="contact-info">
-
-<h3 class="contact-title">
-    <i class="fa-solid fa-address-card"></i>
-    Contact Information
-</h3>
-
-<p><i class="fa-solid fa-user"></i> <b>Name:</b> Vishal Sakhare</p>
-
-<p><i class="fa-solid fa-phone"></i> <b>Mobile:</b> <a href="tel:8668344657">8668344657</a></p>
-
-<p><i class="fa-solid fa-envelope"></i> <b>Email:</b> Vishalsakhare62@gmail.com</p>
-
-<p><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Karad, Maharashtra</p>
-
-<p><i class="fa-solid fa-building-columns"></i> <b>PLI Code:</b> DA01251844</p>
-
-<p><i class="fa-solid fa-heart-pulse"></i> <b>Care Health Code:</b> 21016888</p>
-
-<p><i class="fa-solid fa-shield-heart"></i> <b>SBI Life Code:</b> SLI992393278</p>
-
-</div>
 <br>
 
 <h2>Need Expert Insurance Advice?</h2>
