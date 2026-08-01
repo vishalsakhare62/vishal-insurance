@@ -496,11 +496,7 @@ width:260px;
 grid-template-columns:1fr;
 }
 
-nav{
-display:none;
-}
 
-}
 /* Floating WhatsApp */
 
 .whatsapp-float{
@@ -1068,7 +1064,43 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
 }
 
 
+.menu-btn{
+    display:none;
+    font-size:28px;
+    color:#FFD700;
+    cursor:pointer;
+}
 
+@media(max-width:900px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        top:75px;
+        right:20px;
+        width:220px;
+        background:rgba(0,51,102,0.95);
+        backdrop-filter:blur(15px);
+        border-radius:15px;
+        padding:20px;
+        display:none;
+        flex-direction:column;
+        gap:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,.25);
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    nav a{
+        margin:0;
+        color:#FFD700;
+    }
+}
 </style>
 
 <script type="application/ld+json">
@@ -1135,6 +1167,9 @@ window.addEventListener("load",function(){
 
 <div class="logo">
     <i class="fa-solid fa-shield-halved"></i> VS INSURANCE
+</div>
+<div class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
 </div>
 <nav>
 
@@ -1790,6 +1825,14 @@ counters.forEach(counter => {
 
 });
 
+</script>
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
 </script>
 </body>
 </html>
