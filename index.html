@@ -261,20 +261,11 @@ margin-bottom:10px;
     line-height:1.1;
     margin:15px 0;
     background:linear-gradient(90deg,#FFD700,#FFF8DC,#FFD700);
+    background-clip:text;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     text-shadow:0 0 20px rgba(255,215,0,.4);
     animation:nameGlow 3s infinite;
-}
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:0 0 25px rgba(255,215,0,.35);
-
-    letter-spacing:1px;
-
-    animation:nameGlow 3s ease-in-out infinite;
 }
 
 .hero-text p{
@@ -1070,13 +1061,19 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     font-size:28px;
     color:#FFD700;
     cursor:pointer;
+    margin-left:auto;
 }
 
 @media(max-width:900px){
 
-    .menu-btn{
-        display:block;
-    }
+ .menu-btn{
+    display:block;
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:1001;
+}
 
     nav{
         position:absolute;
@@ -1102,9 +1099,60 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
         color:#FFD700;
     }
 }
+.theme-toggle{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:50%;
+    cursor:pointer;
+    color:#FFD700;
+    font-size:20px;
+    margin-left:20px;
+    transition:all .3s ease;
+}
 
+.theme-toggle:hover{
+    transform:rotate(20deg) scale(1.1);
+    background:#FFD700;
+    color:#003366;
+}
+body.dark-mode{
+    background:#111827;
+    color:#f3f4f6;
+}
 
+body.dark-mode header{
+    background:rgba(20,20,20,0.85);
+}
 
+body.dark-mode .card{
+    background:rgba(40,40,40,0.75);
+    color:#fff;
+}
+
+body.dark-mode .partners{
+    background:#1b1b1b;
+}
+
+body.dark-mode footer{
+    background:#111;
+}
+
+body.dark-mode .title,
+body.dark-mode .section-title,
+body.dark-mode .service-title{
+    color:#FFD700;
+}
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea{
+    font-size:18px;
+    padding:14px;
+}
 
 .enquiry-form input::placeholder,
 .enquiry-form textarea::placeholder{
@@ -1192,7 +1240,9 @@ window.addEventListener("load",function(){
 
 </nav> 
 
-
+<div class="theme-toggle">
+    <i class="fa-solid fa-moon"></i>
+</div>
 </header>
 
 <div class="partners">
@@ -1268,7 +1318,7 @@ window.addEventListener("load",function(){
 
 <section id="about" class="hidden">
 
-<h2 class="title" style="background:linear-gradient(90deg,#003366,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+<h2 class="title" style="background:linear-gradient(90deg,#003366,#FFD700);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
     <i class="fa-solid fa-user-tie"></i> About Me
 </h2>
 
@@ -1837,7 +1887,20 @@ counters.forEach(counter => {
 
 </script>
 <script>
+const themeToggle = document.querySelector(".theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
 
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+    }else{
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+    }
+});
 </script>
 <script>
 const menuBtn = document.querySelector(".menu-btn");
