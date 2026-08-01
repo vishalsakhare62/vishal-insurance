@@ -175,7 +175,8 @@ color:#FFD700;
     display:flex;
     justify-content:space-between;
     align-items:center;
-       flex-wrap:wrap;
+    padding:60px 8%;
+    flex-wrap:wrap;
 
    background:linear-gradient(
     135deg,
@@ -189,7 +190,6 @@ box-shadow: inset 0 0 120px rgba(0,140,255,0.20);
     color:white;
     position:relative;
     overflow:hidden;
-    z-index:1;
 }
 
 .hero-text{
@@ -426,11 +426,11 @@ cursor:pointer;
 
 .card:hover{
 
-  transform:
-translateY(-12px)
-rotateX(8deg)
-rotateY(-8deg)
-scale(1.05);
+   transform:
+translateY(-15px)
+rotateX(5deg)
+rotateY(-5deg)
+scale(1.04);
 
     background:rgba(255,255,255,0.28);
 
@@ -443,14 +443,7 @@ font-size:45px;
 color:#0059b3;
 margin-bottom:20px;
 }
-.card:hover i{
-    color:#FFD700;
-    transform:scale(1.2);
-    text-shadow:
-    0 0 10px #FFD700,
-    0 0 25px #FFD700;
-    transition:.4s ease;
-}
+
 .card h3{
 margin-bottom:15px;
 color:#003366;
@@ -495,7 +488,11 @@ width:260px;
 grid-template-columns:1fr;
 }
 
+nav{
+display:none;
+}
 
+}
 /* Floating WhatsApp */
 
 .whatsapp-float{
@@ -571,18 +568,16 @@ color:#003366;
 position:relative;
 z-index:2;
 animation:slideLeft 1s ease;
-flex:1;
 
 
 }
 
 .hero-image{
-        position:relative;
+
+    position:relative;
     z-index:2;
     animation:slideRight 1s ease;
-flex:1;
-    display:flex;
-    justify-content:flex-end;
+
 }
 
 
@@ -1028,139 +1023,6 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     box-shadow:0 0 10px rgba(255,215,0,.8);
     transition:width .1s linear;
 }
-.counter-section{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:25px;
-    padding:50px 8%;
-    text-align:center;
-}
-
-.counter-box{
-    background:rgba(255,255,255,0.25);
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-    border:1px solid rgba(255,255,255,.3);
-    transition:.3s;
-}
-
-.counter-box:hover{
-    transform:translateY(-10px);
-}
-
-.counter-box h2{
-    font-size:45px;
-    color:#003366;
-    font-weight:800;
-}
-
-.counter-box p{
-    margin-top:10px;
-    font-size:18px;
-    font-weight:600;
-    color:#333;
-}
-
-
-.menu-btn{
-    display:none;
-    font-size:28px;
-    color:#FFD700;
-    cursor:pointer;
-}
-
-@media(max-width:900px){
-
-    .menu-btn{
-        display:block;
-    }
-
-    nav{
-        position:absolute;
-        top:75px;
-        right:20px;
-        width:220px;
-        background:rgba(0,51,102,0.95);
-        backdrop-filter:blur(15px);
-        border-radius:15px;
-        padding:20px;
-        display:none;
-        flex-direction:column;
-        gap:15px;
-        box-shadow:0 10px 25px rgba(0,0,0,.25);
-    }
-
-    nav.active{
-        display:flex;
-    }
-
-    nav a{
-        margin:0;
-        color:#FFD700;
-    }
-}
-.theme-toggle{
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.3);
-    border-radius:50%;
-    cursor:pointer;
-    color:#FFD700;
-    font-size:20px;
-    margin-left:20px;
-    transition:all .3s ease;
-}
-
-.theme-toggle:hover{
-    transform:rotate(20deg) scale(1.1);
-    background:#FFD700;
-    color:#003366;
-}
-body.dark-mode{
-    background:#111827;
-    color:#f3f4f6;
-}
-
-body.dark-mode header{
-    background:rgba(20,20,20,0.85);
-}
-
-body.dark-mode .card{
-    background:rgba(40,40,40,0.75);
-    color:#fff;
-}
-
-body.dark-mode .partners{
-    background:#1b1b1b;
-}
-
-body.dark-mode footer{
-    background:#111;
-}
-
-body.dark-mode .title,
-body.dark-mode .section-title,
-body.dark-mode .service-title{
-    color:#FFD700;
-}
-.enquiry-form input,
-.enquiry-form select,
-.enquiry-form textarea{
-    font-size:18px;
-    padding:14px;
-}
-
-.enquiry-form input::placeholder,
-.enquiry-form textarea::placeholder{
-    font-size:18px;
-}
 </style>
 
 <script type="application/ld+json">
@@ -1228,9 +1090,6 @@ window.addEventListener("load",function(){
 <div class="logo">
     <i class="fa-solid fa-shield-halved"></i> VS INSURANCE
 </div>
-<div class="menu-btn">
-    <i class="fa-solid fa-bars"></i>
-</div>
 <nav>
 
 <a href="#">Home</a>
@@ -1241,11 +1100,8 @@ window.addEventListener("load",function(){
 
 <a href="#contact">Contact</a>
 
-</nav> 
+</nav>
 
-<div class="theme-toggle">
-    <i class="fa-solid fa-moon"></i>
-</div>
 </header>
 
 <div class="partners">
@@ -1514,29 +1370,7 @@ Calculate Premium
 
 </section>
 <!-- ================= WHY CHOOSE ME ================= -->
-<section class="counter-section">
 
-<div class="counter-box">
-<h2 class="counter" data-target="1200">0</h2>
-<p>Policies Guidance</p>
-</div>
-
-<div class="counter-box">
-<h2 class="counter" data-target="500">0</h2>
-<p>Happy Customers</p>
-</div>
-
-<div class="counter-box">
-<h2 class="counter" data-target="3">0</h2>
-<p>Insurance Partners</p>
-</div>
-
-<div class="counter-box">
-<h2 class="counter" data-target="24">0</h2>
-<p>Customer Support</p>
-</div>
-
-</section>
 <section id="why-choose" class="hidden">
 
 <h2 class="section-title">Why Choose Me ?</h2>
@@ -1853,64 +1687,6 @@ window.addEventListener("scroll", function () {
 
     document.getElementById("progress-bar").style.width = progress + "%";
 
-});
-</script>
-<script>
-
-const counters = document.querySelectorAll('.counter');
-
-counters.forEach(counter => {
-
-    counter.innerText = '0';
-
-    const updateCounter = () => {
-
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText;
-
-        const increment = target / 100;
-
-        if(current < target){
-
-            counter.innerText = Math.ceil(current + increment);
-
-            setTimeout(updateCounter,20);
-
-        }else{
-
-            counter.innerText = target + "+";
-
-        }
-
-    };
-
-    updateCounter();
-
-});
-
-</script>
-<script>
-const themeToggle = document.querySelector(".theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
-
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if(document.body.classList.contains("dark-mode")){
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
-    }else{
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
-    }
-});
-</script>
-<script>
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
-
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
 });
 </script>
 </body>
