@@ -460,8 +460,13 @@ align-items:center;
 }
 
 .about img{
-width:100%;
-border-radius:20px;
+    width:100%;
+    border-radius:20px;
+    border:5px solid #FFD700;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25),
+        0 0 25px rgba(255,215,0,.45);
+    transition:all .4s ease;
 }
 
 .info{
@@ -826,7 +831,7 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
         #FFD700
     );
     z-index:-1;
-   animation:rotateBorder 8s ease-in-out infinite;
+   animation:rotateBorder 4.5s ease-in-out infinite;
     filter:blur(3px);
 }
 
@@ -1099,54 +1104,7 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
         color:#FFD700;
     }
 }
-.theme-toggle{
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.3);
-    border-radius:50%;
-    cursor:pointer;
-    color:#FFD700;
-    font-size:20px;
-    margin-left:20px;
-    transition:all .3s ease;
-}
 
-.theme-toggle:hover{
-    transform:rotate(20deg) scale(1.1);
-    background:#FFD700;
-    color:#003366;
-}
-body.dark-mode{
-    background:#111827;
-    color:#f3f4f6;
-}
-
-body.dark-mode header{
-    background:rgba(20,20,20,0.85);
-}
-
-body.dark-mode .card{
-    background:rgba(40,40,40,0.75);
-    color:#fff;
-}
-
-body.dark-mode .partners{
-    background:#1b1b1b;
-}
-
-body.dark-mode footer{
-    background:#111;
-}
-
-body.dark-mode .title,
-body.dark-mode .section-title,
-body.dark-mode .service-title{
-    color:#FFD700;
-}
 .enquiry-form input,
 .enquiry-form select,
 .enquiry-form textarea{
@@ -1240,9 +1198,7 @@ window.addEventListener("load",function(){
 
 </nav> 
 
-<div class="theme-toggle">
-    <i class="fa-solid fa-moon"></i>
-</div>
+
 </header>
 
 <div class="partners">
@@ -1307,7 +1263,7 @@ window.addEventListener("load",function(){
 
 <div class="hero-image">
 
-<img src="vishal.jpeg" alt="Vishal Sakhare">
+<img src="vs-logo.png" alt="Vishal Sakhare">
 
 </div>
 <div class="glass-circle circle1"></div>
@@ -1793,8 +1749,9 @@ window.open("https://wa.me/918668344657?text="+text);
 flatpickr("#dob", {
     dateFormat: "d/m/Y",
     allowInput: true
+    disableMobile: true
 });
-disableMobile: true
+
 </script>
 
 <a href="https://wa.me/918668344657" class="whatsapp-float">
@@ -1887,20 +1844,7 @@ counters.forEach(counter => {
 
 </script>
 <script>
-const themeToggle = document.querySelector(".theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if(document.body.classList.contains("dark-mode")){
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
-    }else{
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
-    }
-});
 </script>
 <script>
 const menuBtn = document.querySelector(".menu-btn");
