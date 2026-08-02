@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -683,7 +685,10 @@ font-size:16px;
 
 }
 
-
+.enquiry-form input::placeholder{
+    color:#888;
+    opacity:1;
+}
 
 outline:none;
 border-color:#0059b3;
@@ -1157,6 +1162,7 @@ document.getElementById("result").innerHTML=
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
 
@@ -1746,6 +1752,8 @@ window.open(
     "https://wa.me/918668344657?text=" + encodeURIComponent(text),
     "_blank"
 );
+}
+
 flatpickr("#dob", {
     dateFormat: "d/m/Y",
     allowInput: true,
@@ -1853,5 +1861,6 @@ menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
