@@ -1731,27 +1731,26 @@ var company=document.getElementById("company").value;
 var plan=document.getElementById("plan").value;
 var cover=document.getElementById("cover").value;
 var message=document.getElementById("message").value;
+var text =
+"🛡️ NEW POLICY ENQUIRY\n\n" +
+"👤 Name : " + name +
+"\n📱 Mobile : " + mobile +
+"\n📧 Email : " + email +
+"\n🎂 DOB : " + dob +
+"\n🏢 Company : " + company +
+"\n📋 Plan : " + plan +
+"\n💰 Cover : " + cover +
+"\n💬 Message : " + message;
 
-var text=
-"🛡️ NEW POLICY ENQUIRY%0A%0A"+
-"👤 Name : "+name+
-"%0A📱 Mobile : "+mobile+
-"%0A📧 Email : "+email+
-"%0A🎂 DOB : "+dob+
-"%0A🏢 Company : "+company+
-"%0A📋 Plan : "+plan+
-"%0A💰 Cover : "+cover+
-"%0A💬 Message : "+message;
-
-window.open("https://wa.me/918668344657?text="+text);
-
-}
+window.open(
+    "https://wa.me/918668344657?text=" + encodeURIComponent(text),
+    "_blank"
+);
 flatpickr("#dob", {
     dateFormat: "d/m/Y",
-    allowInput: true
+    allowInput: true,
     disableMobile: true
 });
-
 </script>
 
 <a href="https://wa.me/918668344657" class="whatsapp-float">
