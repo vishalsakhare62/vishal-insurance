@@ -2021,6 +2021,27 @@ const nav = document.querySelector("nav");
 menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
+@media (max-width:768px){
+
+    #contact .card{
+        width:100%;
+        max-width:none;
+        margin:0;
+        padding:20px 15px;
+    }
+
+    #contact .enquiry-form{
+        width:100%;
+    }
+
+    #contact .enquiry-form input,
+    #contact .enquiry-form select,
+    #contact .enquiry-form textarea,
+    #contact .enquiry-form button{
+        width:100%;
+    }
+
+}
 </script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
