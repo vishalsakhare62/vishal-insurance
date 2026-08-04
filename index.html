@@ -504,6 +504,7 @@ grid-template-columns:1fr;
 }
 
 
+}
 /* Floating WhatsApp */
 
 .whatsapp-float{
@@ -585,14 +586,14 @@ flex:1;
 }
 
 .hero-image{
-        position:relative;
+    position:relative;
     z-index:2;
     animation:slideRight 1s ease;
-flex:1;
-    display:flex;
-    justify-content:flex-end;
+    display:inline-block;
+    flex:none;
+    width:fit-content;
+    margin:auto;
 }
-
 
 @keyframes slideLeft{
 
@@ -836,10 +837,6 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
     display:block;
 }
 
-}
-.hero-image{
-    position: relative;
-    display: inline-block;
 }
 
 .hero-image::before{
