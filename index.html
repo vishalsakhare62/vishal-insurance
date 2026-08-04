@@ -397,14 +397,7 @@ transform:translateY(-3px);
 section{
 padding:80px 8%;
 }
-@media (max-width:768px){
 
-    #contact{
-        padding-left:7%;
-        padding-right:7%;
-    }
-
-}
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -827,11 +820,9 @@ box-shadow:0 0 10px rgba(0,89,179,.2);
 }
 @media (max-width:768px){
 
-    
 .about{
     grid-template-columns:1fr;
     text-align:center;
-
 }
 
 .about img{
@@ -1663,7 +1654,10 @@ Calculate Premium
 
 <i class="fa-solid fa-user-check"></i>
 
-<h3>Trusted Insurance Advisor</h3>
+<div class="trusted-badge">
+    <i class="fa-solid fa-circle-check"></i>
+    Trusted Insurance Advisor
+</div>
 
 <p>
 Get honest advice and the right insurance solution based on your family's needs and financial goals.
@@ -2021,34 +2015,7 @@ const nav = document.querySelector("nav");
 menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
-@media (max-width:768px){
-
-    #contact .card{
-        width:100%;
-        max-width:none;
-        margin:0;
-        padding:20px 15px;
-    }
-
-    #contact .enquiry-form{
-        width:100%;
-    }
-
-    #contact .enquiry-form input,
-    #contact .enquiry-form select,
-    #contact .enquiry-form textarea,
-    #contact .enquiry-form button{
-        width:100%;
-    }
-
-}
 </script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
 </body>
 </html>
